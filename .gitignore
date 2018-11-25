@@ -1,0 +1,6 @@
+.DS_Store
+work/*
+*.shsh2
+*.shsh
+
+version.xml

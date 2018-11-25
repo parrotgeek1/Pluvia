@@ -1,0 +1,17 @@
+#!/bin/bash
+/sbin/mount_hfs /dev/disk0s1s1 /mnt1 
+/sbin/mount_hfs /dev/disk0s1s2 /mnt2
+/bin/rm -f /mnt1/System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist /mnt1/System/Library/LaunchDaemons/com.apple.softwareupdateservicesd.plist 
+DataSize="$(/bin/df -B1 | /usr/bin/sed -n -e 's/^.*\/dev\/disk0s1s2 //p'| /usr/bin/sed -e 's/^[ \t]*//'|/usr/bin/sed 's/ .*//')"
+GUID="$((/bin/echo -e "i\n2\nq")  | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Partition unique GUID: //p')"
+LastSect="$((/bin/echo -e "i\n2\nq")  |/bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Last sector: //p' | /usr/bin/sed 's/ .*//')"
+Part2LastSect=$(($LastSect-64))
+NewDataSize=$(($DataSize-524288))
+(/bin/echo -e "d\n2\nn\n\n$Part2LastSect\n\nc\n2\nData\nx\na\n2\n48\n49\n\nc\n2\n$GUID\ns\n4\nm\nn\n3\n\n$LastSect\n\nw\nY\n")  |/bin/gptfdisk /dev/rdisk0s1
+/bin/sync;/bin/sync;/bin/sync;
+/bin/hfs_resize /mnt2 $NewDataSize
+# Install Derebus ramdisk and change the nvram
+/usr/sbin/nvram boot-partition=2
+/bin/dd of=/dev/rdisk0s1s3 if=/ramdiskH_beta4.dmg bs=512k count=1
+/usr/sbin/nvram auto-boot=true
+exec /sbin/reboot.real

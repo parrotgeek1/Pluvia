@@ -1,0 +1,5 @@
+#!/bin/bash
+/usr/sbin/nvram -d boot-partition
+/usr/sbin/nvram -d boot-command
+/usr/sbin/nvram auto-boot=true
+exec /sbin/reboot.real

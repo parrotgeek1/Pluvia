@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>CreateFilesystemPartitions</key>
+   <false/>
+   <key>FlashNOR</key>
+   <false/>
+   <key>UpdateBaseband</key>
+   <false/>
+   <key>UpdateGasGauge</key>
+   <false/>
+   <key>SystemImage</key>
+   <false/>
+   <key>WipeStorageDevice</key>
+   <false/>
+</dict>
+</plist>
