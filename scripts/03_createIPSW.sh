@@ -11,7 +11,25 @@ chmod 0400 iBEC
 ../tools/root_tar/mytar cRf iBEC.tar iBEC
 rm -f iBEC
 cd ..
-./tools/ipsw "$1" work/tmp.ipsw -ramdiskgrow 600 work/iBEC.tar >/dev/null
+extras=
+extrasbegin=
+if [ "x$2" = "xjailbreak" ] ; then
+	extras="jailbreak/Cydia.tar"
+	extrasbegin="-S 50"
+	iosver=`cat work/pvers | cut -d. -f1`
+	if [ $iosver = 5 ]; then
+		echo Installing iOS $iosver jailbreak
+		extras="$extras jailbreak/unthredeh4il.tar"
+	elif [ $iosver = 6 ]; then
+		echo Installing iOS $iosver jailbreak
+		extras="$extras jailbreak/p0sixspwn.tar"
+	else
+		extras=
+		extrasbegin=
+		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
+	fi
+fi
+./tools/ipsw "$1" work/tmp.ipsw $extrasbegin -ramdiskgrow 600 work/iBEC.tar $extras >/dev/null
 rm -f work/iBEC.tar
 echo Replacing bootchain components
 cd work/712
@@ -32,6 +50,9 @@ name=Patched
 if [ "x$2" = "xreset" ] ; then
 	rda=ramdisk_add_reset
 	name=ResetNVRAM
+fi
+if [ "x$2" = "xjailbreak" ] ; then
+	name=Patched_JB
 fi
 find ../$rda -type f -not -name '.*' | while read f; do
 	dest="`echo "$f" | cut -d/ -f3-`"

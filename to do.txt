@@ -1,8 +1,13 @@
 Testers! Esp. for 5.1.1
 More FW bundles
-Option to JB? afc2?
+p0sixspwn.tar just dumps stuff into / - eww
+JB iOS 4, 7
+Is iBooks fix needed with unthredeh4il untether?
 3,2 & 3,3 when dora_ios does it - just need different ramdiskf & bundles
 should check prereqs, OS, etc, check arguments an ipsw & in restore, usage reset
 auto download ipsw
 !!! iOS 4 does not use LwVM (Need to use disk0s3 instead of 0s1s3 etc) and also TwistedMind2 instead of gptfdisk
-Why does it only notice plugged in after boot? Is that even because of this or just my iphone?
+
+iOS 4.0-4.2 JB hint: before untether exec
+bsexec .. /usr/sbin/sysctl -w security.mac.proc_enforce=0
+bsexec .. /usr/sbin/sysctl -w security.mac.vnode_enforce=0

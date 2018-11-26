@@ -7,7 +7,8 @@ Beta 1 Limitations
 ==================
 Only for Mac!
 Only supports iPhone3,1. 
-Only supports a few firmwares (see FirmwareBundles folder for list)
+Only supports iOS 5.1.1 (9B208), 6.1.2, 6.1.3, 7.0.4, and 7.0.6.
+Can't jailbreak iOS 7.x
 
 NOTE: 8GB iPhone 4's can only run iOS 6 and newer, NOT iOS 4 or 5. This almost certainly can't be fixed.
 
@@ -15,7 +16,8 @@ How to use Pluvia
 =================
 1) Creating the patched IPSW
 
-Run ./make_ipsw.sh <Input_IPSW>
+Run ./make_ipsw.sh <Input_IPSW> jailbreak (if you want to jailbreak)
+Or run ./make_ipsw.sh <Input_IPSW> (if you don't want to jailbreak)
 
 2) Restoring the firmware
 
