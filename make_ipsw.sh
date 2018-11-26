@@ -68,6 +68,24 @@ _canonicalize_file_path() {
     (cd "$dir" 2>/dev/null && printf '%s/%s\n' "$(pwd -P)" "$file")
 }
 
+usage() {
+	echo "Usage: $1 <input.ipsw> [jailbreak | reset]"
+}
+
+if [ "$#" != 1 ] && [ "$#" != 2 ]; then
+	usage "$0"
+	exit 1
+fi
+
+if [ "$2" != "jailbreak" ] && [ "$2" != "reset" ] ;then
+	usage "$0"
+	exit 1
+fi
+
+if [ ! -f "$1" ] ; then
+	echo "Can't read IPSW file: $1"
+	exit 1
+fi
 
 cd "$(dirname "$0")"
 for i in scripts/*.sh; do
