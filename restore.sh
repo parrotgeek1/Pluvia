@@ -18,7 +18,7 @@ vers=`get_key Restore.plist ProductVersion`
 rm -f Restore.plist
 
 rm -f *.shsh2
-./tools/tsschecker -e $ecid -d $model -l -s
+./tools/tsschecker -e 0x$ecid -d $model -l -s
 ecidf=`echo *.shsh2 | cut -d _ -f 1-2 | tr _ -`-DG.shsh
 mkdir -p shsh
 rm -f "shsh/$ecidf"
