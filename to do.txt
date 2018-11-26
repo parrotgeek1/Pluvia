@@ -1,6 +1,7 @@
 Testers! Esp. for 5.1.1
 More FW bundles
 p0sixspwn.tar just dumps stuff into / - eww
+update cydia.tar - make it reboot after stashing, remove ultrasn0w repo
 JB iOS 4, 7
 Is iBooks fix needed with unthredeh4il untether?
 3,2 & 3,3 when dora_ios does it - just need different ramdiskf & bundles
