@@ -5,7 +5,7 @@
 	<key>DownloadUrl</key>
 	<string></string>
 	<key>Filename</key>
-	<string>iPhone3,1_6.1.2_10B146_Restore.ipsw</string>
+	<string>iPhone3,1_6.0_10A403_Restore.ipsw</string>
 	<key>FilesystemPatches</key>
 	<dict/>
 	<key>FirmwarePatches</key>
@@ -15,11 +15,11 @@
 			<key>Decrypt</key>
 			<true/>
 			<key>File</key>
-			<string>048-1037-002.dmg</string>
+			<string>038-6451-001.dmg</string>
 			<key>IV</key>
-			<string>fab2441195cde907e72d8edc17313173</string>
+			<string>6e6031e8a7757fa54aed9ac05dafde0a</string>
 			<key>Key</key>
-			<string>2d37685fadf19212f422c37dd6beb5191098b56c9efecb0d894946c5079d33b6</string>
+			<string>ed31e88ae13d996c868b86712d2831d8f8272842b3ecc7baa4bb186dd4b5b4e1</string>
 			<key>TypeFlag</key>
 			<integer>8</integer>
 		</dict>
@@ -30,9 +30,9 @@
 			<key>File</key>
 			<string>Firmware/all_flash/all_flash.n90ap.production/DeviceTree.n90ap.img3</string>
 			<key>IV</key>
-			<string>7bbc45072734ffc7db4d3d92bb595172</string>
+			<string>d75584bbdd07b5fe5dcbc85b3a62f13d</string>
 			<key>Key</key>
-			<string>6e0a408c461deb8682048405fa9fea8586a038d4415d90a023f279f5e420fd8e</string>
+			<string>bd4b014f7663215a2d31117b9072019d9f723a2f817eebf10f2fce89d9852e0b</string>
 		</dict>
 		<key>RestoreKernelCache</key>
 		<dict>
@@ -41,9 +41,9 @@
 			<key>File</key>
 			<string>kernelcache.release.n90</string>
 			<key>IV</key>
-			<string>7b2070c0552d25ec7f8132a9d3dbaf21</string>
+			<string>1190191032be38e772b988e3ad92d1c2</string>
 			<key>Key</key>
-			<string>b84e3f36912de8d62155c8f7bc84263809dbe1cf40ece2771e22f260b995a3e6</string>
+			<string>9ab5b2651cc8b63ba0d5c05f0218cdbbb1ca24af78853bed97e36412c989a770</string>
 			<key>TypeFlag</key>
 			<integer>4</integer>
 		</dict>
@@ -54,9 +54,9 @@
 			<key>File</key>
 			<string>Firmware/all_flash/all_flash.n90ap.production/applelogo@2x.s5l8930x.img3</string>
 			<key>IV</key>
-			<string>3f8242d052747b044ce397913ed0653f</string>
+			<string>a14d007b10b063d75aae4a2b91999e6c</string>
 			<key>Key</key>
-			<string>8c55091ae1df185dabe7710ee987bc5a06460ca2930f4bf3ddf8b6fcd248fd67</string>
+			<string>25705802dd917d9c651c9b8c49cc4d8874c3a67f5ce1a0adfd4758a14ddff454</string>
 		</dict>
 		<key>iBEC</key>
 		<dict>
@@ -65,9 +65,9 @@
 			<key>File</key>
 			<string>Firmware/dfu/iBEC.n90ap.RELEASE.dfu</string>
 			<key>IV</key>
-			<string>007445532f74d73324809bb89dd4e227</string>
+			<string>5d4cae31fee59b4f671ec3823dffc421</string>
 			<key>Key</key>
-			<string>4ba778de8d22c9aa4c82227933d87fff3dd895d4dbbab9566a76b9d58ab331fc</string>
+			<string>5f607a42b35d8935c559ba1216cc19acd1c51dde09c994950c5976b5b4e5fbbd</string>
 			<key>Patch</key>
 			<string>iBEC.n90ap.RELEASE.patch</string>
 			<key>TypeFlag</key>
@@ -80,9 +80,9 @@
 			<key>File</key>
 			<string>Firmware/dfu/iBSS.n90ap.RELEASE.dfu</string>
 			<key>IV</key>
-			<string>f6a85b0dc5f5fdd1bf60dbebabf7cbb4</string>
+			<string>b65e495bc0f82471575301f38c9216d8</string>
 			<key>Key</key>
-			<string>96cb3c60be2dca2c80d1ea9f569da4745c87bc76e3db3e2bb5de950b2ceb4e06</string>
+			<string>5986012d3cd4174b82d1ed5cdc2d0bc0a2bf1ac2f1afeab2ec7b04446be08ce6</string>
 			<key>Patch</key>
 			<string>iBSS.n90ap.RELEASE.patch</string>
 			<key>TypeFlag</key>
@@ -90,7 +90,7 @@
 		</dict>
 	</dict>
 	<key>Name</key>
-	<string>iPhone3,1_6.1.2_10B146</string>
+	<string>iPhone3,1_6.0_10A403_Restore</string>
 	<key>Platform</key>
 	<integer>1</integer>
 	<key>RamdiskMountVolume</key>
@@ -108,15 +108,15 @@
 		</dict>
 	</dict>
 	<key>RootFilesystem</key>
-	<string>048-0903-002.dmg</string>
+	<string>038-6494-001.dmg</string>
 	<key>RootFilesystemKey</key>
-	<string>01c1fb58265e6a22ebe784edf55cc549d4f7f73d5a5769eb7365d1145b3f9e0798b8851a</string>
+	<string>ca9ed452f256fa47ccdb387fdc0daa53d19428b2569fb089af58df576f6e54a4fb6de0ae</string>
 	<key>RootFilesystemMountVolume</key>
-	<string>Brighton10B146.N90OS</string>
+	<string>Sundance10A403.N90OS</string>
 	<key>RootFilesystemSize</key>
 	<integer>1250</integer>
 	<key>SHA1</key>
-	<string>b62c043338898893c210bb81e608b4b099de7c5f</string>
+	<string>4553077c61fd9c487c906ee419d2159f807a00fb</string>
 	<key>SubPlatform</key>
 	<integer>6</integer>
 </dict>
