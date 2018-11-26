@@ -15,7 +15,7 @@ extras=
 extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
 	extras="jailbreak/Cydia.tar"
-	extrasbegin="-S 50"
+	extrasbegin="-S 100"
 	iosver=`cat work/pvers | cut -d. -f1`
 	if [ $iosver = 5 ]; then
 		echo Installing iOS $iosver jailbreak
