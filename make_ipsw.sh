@@ -72,12 +72,7 @@ usage() {
 	echo "Usage: $1 <input.ipsw> [jailbreak | reset]"
 }
 
-if [ "$#" != 1 ] && [ "$#" != 2 ]; then
-	usage "$0"
-	exit 1
-fi
-
-if [ "$2" != "jailbreak" ] && [ "$2" != "reset" ] ;then
+if [ "x$2" != "x" ] && [ "$2" != "jailbreak" ] && [ "$2" != "reset" ] ;then
 	usage "$0"
 	exit 1
 fi
