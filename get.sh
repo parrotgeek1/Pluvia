@@ -21,7 +21,7 @@ chmod 0755 AssetData/payload/replace/$i
 done
 echo Tarring
 cd AssetData/payload/replace
-gtar --owner 0 --group 0 -T ../../../../616b.txt -cf ../../../../616.tar
+../tools/gtar --owner 0 --group 0 -T ../../../../616b.txt -cf ../../../../616.tar
 cd ../../../..
 echo Cleaning
 rm -rf 616 61*.zip 616b.txt dyld_shared_cache_armv7*
