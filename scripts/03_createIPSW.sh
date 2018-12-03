@@ -11,11 +11,11 @@ chmod 0400 iBEC
 ../tools/root_tar/mytar cRf iBEC.tar iBEC
 rm -f iBEC
 cd ..
-extras=
-extrasbegin=
+extras=616.tar
+extrasbegin="-S 300"
 if [ "x$2" = "xjailbreak" ] ; then
-	extras="jailbreak/Cydia.tar"
-	extrasbegin="-S 100"
+	extras="616.tar jailbreak/Cydia.tar"
+	extrasbegin="-S 400"
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
@@ -48,7 +48,7 @@ echo Patching ramdisk
 MountRamdisk="$(hdiutil mount ramdisk.dmg | awk -F '\t' '{print $3}')"
 mv "$MountRamdisk/sbin/reboot" "$MountRamdisk/sbin/reboot.real"
 rda=ramdisk_add
-name=Patched
+name=Patched616
 if [ "x$2" = "xreset" ] ; then
 	rda=ramdisk_add_reset
 	name=ResetNVRAM

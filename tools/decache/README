@@ -1,0 +1,23 @@
+Decache
+
+-----
+
+Decache extracts working and completely valid files from an iOS dyld shared cache.
+
+Compilation:
+  Link your theos directory to ./theos
+  Edit the makefile to determine native (OS X) vs iphone (iOS)
+
+Usage examples:
+  To list all files in the cache
+    decache -c <cache>
+  To dump the entire cache
+    decache -c <cache> -o <output dir>
+  To dump just one file
+    decache -c <cache> -x <file to extract>
+    decache -c <cache> -x <file to extract> -o <output path + filename>
+  
+Notes:
+  Wildcards are not supported.  However, decache does partial string matching (e.g. '-x UIKit')
+  Do not use scp/rsync to download your cache from your device.  Use afc.  Or figure out how to use F_GLOBAL_NOCACHE.
+  I do not add code signatures.

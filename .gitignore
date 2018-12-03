@@ -4,3 +4,7 @@ work/*
 *.shsh
 
 version.xml
+
+616.tar
+
+*.o
