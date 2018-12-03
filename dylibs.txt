@@ -1,3 +1,4 @@
 System/Library/Messages/PlugIns/SMS.imservice/SMS
 System/Library/SpringBoardPlugins/SIMToolkitUI.servicebundle/SIMToolkitUI
 System/Library/VideoProcessors/Highlight.videoprocessor
+usr/lib/libTelephonyIOKitDynamic.dylib

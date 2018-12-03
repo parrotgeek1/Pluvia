@@ -19,10 +19,6 @@ mkdir -p AssetData/payload/replace/`dirname $i`
 ../tools/ldid -S AssetData/payload/replace/$i
 chmod 0755 AssetData/payload/replace/$i
 done
-echo Downloading libTelephonyIOKitDynamic.dylib
-mkdir -p AssetData/payload/replace/usr/lib/
-curl -s -L -o AssetData/payload/replace/usr/lib/libTelephonyIOKitDynamic.dylib https://github.com/EachAndOther/Legacy-iOS-SDKs/blob/master/iPhoneOS6.1.sdk/usr/lib/libTelephonyIOKitDynamic.dylib?raw=true
-chmod 0755 AssetData/payload/replace/usr/lib/libTelephonyIOKitDynamic.dylib
 echo Tarring
 cd AssetData/payload/replace
 gtar --owner 0 --group 0 -T ../../../../616b.txt -cf ../../../../616.tar
