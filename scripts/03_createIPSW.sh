@@ -12,10 +12,10 @@ chmod 0400 iBEC
 rm -f iBEC
 cd ..
 extras=616.tar
-extrasbegin="-S 300"
+extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
 	extras="616.tar jailbreak/Cydia.tar"
-	extrasbegin="-S 400"
+	extrasbegin="-S 100"
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
