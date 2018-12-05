@@ -52,6 +52,9 @@ if [ "x$iv" = x ] ; then
 	rm -f Restore.plist tmp.txt
 	exit 1
 fi
+echo $iv > iv
+echo $key > key
+fi
 echo $ptype > ptype
 echo $pvers > pvers
 echo $build > build
@@ -59,7 +62,4 @@ echo $bcfg > bcfg
 echo $rramdisk > rramdisk
 echo $sysimg > sysimg
 rm -f Restore.plist
-echo $iv > iv
-echo $key > key
-fi
 rm -f tmp.txt
