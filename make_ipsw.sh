@@ -89,5 +89,5 @@ fi
 
 cd "$(dirname "$0")"
 for i in scripts/*.sh; do
-	bash $i "`realpath "$1"`" "$2" || exit $?
+	bash -e $i "`realpath "$1"`" "$2" || exit $?
 done
