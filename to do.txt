@@ -1,1 +1,4 @@
-[this has been removed in preparation for beta 2 which is a complete rewrite]
+Fix carrier bundle bug
+Change IPSW version/build to 6.1.6
+Change root FS name
+Support all iPhone 4's (later)
