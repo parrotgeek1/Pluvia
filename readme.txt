@@ -37,8 +37,8 @@ Run ./restore.sh <Reset_NVRAM_IPSW>
 
 Credits
 =======
-@xerub for De Rebus Antiquis iBoot exploit
-@dora2_iOS for the auto-booting version of the exploit (ramdiskH_beta4.dmg)
+@xerub for De Rebus Antiquis
+@dora2-iOS for the auto-booting version of the exploit (ramdiskH_beta4.dmg), and the firmware bundles (https://github.com/dora2-iOS/s0meiyoshino)
 @a8q for partitioning script in ramdisk
 @saurik for Cydia.tar
 p0sixspwn (@ih8sn0w, @squiffy, @winocm) for the iOS 6 bootstrap
