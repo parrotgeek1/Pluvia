@@ -13,9 +13,9 @@ mkdir 616
 cd 616
 tr '\n' '\0' <../616.txt | xargs -0 unzip -q ../616.zip
 echo Extracting dyld caches
-unzip -qq -j 613.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
+unzip -qq -j ../613.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
 mv dyld_shared_cache_armv7 dyld_shared_cache_armv7_i4
-unzip -qq -j 6163gs.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
+unzip -qq -j ../6163gs.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
 for i in `cat ../dylibs.txt`; do
 mkdir -p AssetData/payload/replace/`dirname $i`
 ../tools/decache/decache -c dyld_shared_cache_armv7 -x /$i -o AssetData/payload/replace/$i >/dev/null
