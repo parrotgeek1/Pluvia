@@ -45,4 +45,3 @@ AssetData/payload/replace/usr/libexec/lockdownd
 AssetData/payload/replace/usr/libexec/mobile_recert
 AssetData/payload/replace/usr/libexec/securityd
 AssetData/payload/replace/usr/libexec/vpnagent
-AssetData/payload/replace/usr/standalone/update/ramdisk/H3SURamDisk.dmg
