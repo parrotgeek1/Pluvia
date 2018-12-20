@@ -48,3 +48,4 @@ libimobiledevice and @tihmstar for idevicerestore
 @tihmstar and @encounter for tsschecker
 @sequinn and @parrotgeek1 for root_tar
 The GNU Project for GNU tar (gtar)
+@danzatt for ios-dualboot (hfs_resize)
