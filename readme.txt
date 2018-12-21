@@ -10,7 +10,7 @@ Only supports iPhone3,1.
 Only supports iOS 6.x, 7.0.4, and 7.0.6.
 Can only jailbreak iOS 6.1.3
 
-NOTE: 8GB iPhone 4's can only run iOS 6 and newer, NOT iOS 4 or 5. This almost certainly can't be fixed.
+NOTE: 8GB iPhone 4's that shipped with iOS 6 can only run iOS 6 and newer, NOT iOS 4 or 5. This almost certainly can't be fixed.
 
 How to use Pluvia
 =================
