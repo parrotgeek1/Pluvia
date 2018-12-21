@@ -8,7 +8,7 @@ cd work
 echo "Creating patched IPSW (this will take several minutes)"
 rm -f iBEC.tar
 chmod 0400 iBEC
-../tools/root_tar/mytar cRf iBEC.tar iBEC
+../tools/gtar --owner 0 --group 0 -cf iBEC.tar iBEC
 rm -f iBEC
 cd ..
 extras=616.tar
@@ -48,13 +48,13 @@ echo Patching ramdisk
 MountRamdisk="$(hdiutil mount ramdisk.dmg | awk -F '\t' '{print $3}')"
 mv "$MountRamdisk/sbin/reboot" "$MountRamdisk/sbin/reboot.real"
 rda=ramdisk_add
-name=Patched616
+name=
 if [ "x$2" = "xreset" ] ; then
 	rda=ramdisk_add_reset
-	name=ResetNVRAM
+	name=_ResetNVRAM
 fi
 if [ "x$2" = "xjailbreak" ] ; then
-	name=Patched_JB
+	name=_JB
 fi
 find ../$rda -type f -not -name '.*' | while read f; do
 	dest="`echo "$f" | cut -d/ -f3-`"
@@ -74,7 +74,14 @@ fi
 echo Adding patched ramdisk to IPSW
 zip -qq tmp.ipsw $rramdisk
 rm -f $rramdisk $rramdisk.orig
-iname="`echo "$1" | sed "s/\.ipsw$/_$name.ipsw/"`"
+echo Patching Restore.plist
+rm -f Restore.plist
+unzip -qq tmp.ipsw Restore.plist
+sed -i '' 's/6\.1\.3/6.1.6/g' Restore.plist
+sed -i '' 's/10B329/10B500/g' Restore.plist
+zip -qq tmp.ipsw Restore.plist
+rm -f Restore.plist
+iname="`echo "$1" | sed -e "s/6.1.3/6.1.6/" -e "s/10B329/10B500/" -e "s/\.ipsw$/$name.ipsw/"`"
 rm -rf "$iname"
 mv tmp.ipsw "$iname"
 rm -f bcfg build ptype pvers rramdisk sysimg

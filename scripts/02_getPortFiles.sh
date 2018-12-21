@@ -1,8 +1,9 @@
 #!/bin/bash -e
+if [ ! -f 616.tar ] ;then
 echo Downloading iPod 4 6.1.6
 rm -rf 616 61*.zip 616b.txt 616.tar dyld_shared_cache_armv7*
-cat 616.txt | sed 's@^AssetData/payload/replace/@@' > 616b.txt
-cat dylibs.txt dylibs4.txt >> 616b.txt
+cat data/616.txt | sed 's@^AssetData/payload/replace/@@' > 616b.txt
+cat data/dylibs.txt data/dylibs4.txt >> 616b.txt
 curl -# -L -o 616.zip http://appldnld.apple.com/iOS6.1/031-3209.20140221.VbP9o/com_apple_MobileAsset_SoftwareUpdate/0f3e181913166c8e828d946a545d02cfc08c8e02.zip
 echo Downloading iPhone 3GS 6.1.6
 curl -# -L -o 6163gs.zip http://appldnld.apple.com/iOS6.1/091-3486.20140221.Poy65/com_apple_MobileAsset_SoftwareUpdate/903b149c839c0650fd072d47c52599a52cbdd292.zip
@@ -11,17 +12,17 @@ curl -# -L -o 613.zip http://appldnld.apple.com/iOS6.1/091-3360.20130311.BmfR4/c
 echo Extracting changed files
 mkdir 616
 cd 616
-tr '\n' '\0' <../616.txt | xargs -0 unzip -q ../616.zip
+tr '\n' '\0' < ../data/616.txt | xargs -0 unzip -q ../616.zip
 echo Extracting dyld caches
 unzip -qq -j ../613.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
 mv dyld_shared_cache_armv7 dyld_shared_cache_armv7_i4
 unzip -qq -j ../6163gs.zip AssetData/payload/replace/System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
-for i in `cat ../dylibs.txt`; do
+for i in `cat ../data/dylibs.txt`; do
 mkdir -p AssetData/payload/replace/`dirname $i`
 ../tools/decache/decache -c dyld_shared_cache_armv7 -x /$i -o AssetData/payload/replace/$i >/dev/null
 ../tools/ldid -S AssetData/payload/replace/$i
 done
-for i in `cat ../dylibs4.txt`; do
+for i in `cat ../data/dylibs4.txt`; do
 mkdir -p AssetData/payload/replace/`dirname $i`
 ../tools/decache/decache -c dyld_shared_cache_armv7_i4 -x /$i -o AssetData/payload/replace/$i >/dev/null
 ../tools/ldid -S AssetData/payload/replace/$i
@@ -86,4 +87,6 @@ echo Tarring
 cd ../../../..
 echo Cleaning
 rm -rf 616 61*.zip 616b.txt dyld_shared_cache_armv7*
-echo "Done! Please run ./make_ipsw.sh <6.1.3.ipsw>"
+else
+echo Using saved 6.1.6 files
+fi

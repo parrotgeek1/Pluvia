@@ -12,16 +12,12 @@ Only supports iPhone3,1.
 
 How to use Pluvia
 =================
-1) Downloading required files
-
-Run ./get.sh and wait up to 15 minutes
-
-2) Creating the patched IPSW
+1) Creating the patched IPSW
 
 Run ./make_ipsw.sh <Input_6.1.3_IPSW> jailbreak (if you want to jailbreak)
 Or run ./make_ipsw.sh <Input_6.1.3_IPSW> (if you don't want to jailbreak)
 
-3) Restoring the firmware
+2) Restoring the firmware
 
 Connect your iPhone 4 and put it in DFU mode.
 Run ./restore.sh <Patched_IPSW>
@@ -46,6 +42,5 @@ libimobiledevice and @tihmstar for idevicerestore
 @axi0mx for ipwndfu
 @ih8sn0w, @NyanSatan, and @Merculous for iBoot32Patcher
 @tihmstar and @encounter for tsschecker
-@sequinn and @parrotgeek1 for root_tar
 The GNU Project for GNU tar (gtar)
 @danzatt for ios-dualboot (hfs_resize)
