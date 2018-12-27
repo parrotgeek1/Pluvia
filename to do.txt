@@ -1,4 +1,3 @@
-Fix carrier bundle bug
 Change root FS name
 Support all iPhone 4's (later)
 Use partialzipbrowser for downloading 7.1.2 bootchain, if it actually works. 
