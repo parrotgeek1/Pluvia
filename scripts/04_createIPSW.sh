@@ -84,5 +84,5 @@ rm -f Restore.plist
 iname="`echo "$1" | sed -e "s/6.1.3/6.1.6/" -e "s/10B329/10B500/" -e "s/\.ipsw$/$name.ipsw/"`"
 rm -rf "$iname"
 mv tmp.ipsw "$iname"
-rm -f bcfg build ptype pvers rramdisk sysimg
+rm -f bcfg build ptype pvers rramdisk sysimg ramdisk.dmg
 echo "Created patched IPSW at: $iname"
