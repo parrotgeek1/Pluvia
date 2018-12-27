@@ -7,7 +7,7 @@ echo Extracting iBoot from IPSW
 unzip -p "$1" Firmware/all_flash/all_flash.${bcfg}.production/iBoot.${bcfg}.RELEASE.img3 > iBoot.img3
 echo Patching iBoot
 ../tools/xpwntool iBoot.img3 iBoot.dec -k `cat key` -iv `cat iv` >/dev/null
-../tools/iBoot32Patcher/iBoot32Patcher iBoot.dec PwnediBoot.dec -r -d -b "amfi_get_out_of_my_way=1" >/dev/null
+../tools/iBoot32Patcher/iBoot32Patcher iBoot.dec PwnediBoot.dec -r -d -b "cs_enforcement_disable=1 amfi_get_out_of_my_way=1" >/dev/null
 # boot-partition to l33t-partition - will never be found in nvram
 ../tools/hexpatch.sh PwnediBoot.dec 626f6f742d706172746974696f6e 6c3333742d706172746974696f6e
 # boot-ramdisk to l33t-ramdisk - will never be found in nvram
