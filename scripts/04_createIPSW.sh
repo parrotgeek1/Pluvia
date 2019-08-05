@@ -12,21 +12,18 @@ chmod 0400 iBEC
 rm -f iBEC
 cd ..
 extras=616.tar
-extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
 	extras="616.tar jailbreak/Cydia.tar"
-	extrasbegin="-S 100"
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
 		extras="$extras jailbreak/p0sixspwn.tar"
 	else
-		extras=
-		extrasbegin=
+		extras=616.tar
 		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
 	fi
 fi
-./tools/ipsw "$1" work/tmp.ipsw $extrasbegin -ramdiskgrow 600 work/iBEC.tar $extras >/dev/null
+./tools/ipsw "$1" work/tmp.ipsw -ramdiskgrow 600 work/iBEC.tar $extras >/dev/null
 rm -f work/iBEC.tar
 echo Replacing bootchain components
 cd work/712
@@ -77,8 +74,8 @@ rm -f $rramdisk $rramdisk.orig
 echo Patching Restore.plist
 rm -f Restore.plist
 unzip -qq tmp.ipsw Restore.plist
-sed -i '' 's/6\.1\.3/6.1.6/g' Restore.plist
-sed -i '' 's/10B329/10B500/g' Restore.plist
+/usr/bin/sed -i '' 's/6\.1\.3/6.1.6/g' Restore.plist
+/usr/bin/sed -i '' 's/10B329/10B500/g' Restore.plist
 zip -qq tmp.ipsw Restore.plist
 rm -f Restore.plist
 iname="`echo "$1" | sed -e "s/6.1.3/6.1.6/" -e "s/10B329/10B500/" -e "s/\.ipsw$/$name.ipsw/"`"
