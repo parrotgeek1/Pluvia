@@ -24,6 +24,7 @@ mkdir -p shsh
 rm -f "shsh/$ecidf"
 mv *.shsh2 "shsh/$ecidf"
 echo Downloaded SHSH
+killall iTunes iTunesHelper >/dev/null 2>&1 || true
 cd tools/ipwndfu
 ./ipwndfu -p
 cd ../..
