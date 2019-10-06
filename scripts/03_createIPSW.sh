@@ -15,11 +15,14 @@ extras=
 extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
 	extras="jailbreak/Cydia.tar"
-	extrasbegin="-S 100"
+	extrasbegin="-S 20"
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
 		extras="$extras jailbreak/p0sixspwn.tar"
+	elif [ $iosver = 5.1.1 ]; then
+		echo Installing iOS $iosver jailbreak
+		extras="$extras jailbreak/unthredeh4il.tar"
 	else
 		extras=
 		extrasbegin=
