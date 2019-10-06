@@ -8,7 +8,6 @@ ios5=1
 /sbin/mount_hfs /dev/disk0s1s3 /mnt2
 fi
 /bin/rm -f /mnt1/System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist /mnt1/System/Library/LaunchDaemons/com.apple.softwareupdateservicesd.plist /mnt1/System/Library/LaunchDaemons/com.apple.OTACrashCopier.plist /mnt1/System/Library/LaunchDaemons/com.apple.OTATaskingAgent.plist 
-/bin/cat /iBEC > /mnt1/iBEC
 DataSize="$(/bin/df -B1 | /usr/bin/sed -n -e 's/^.*\/dev\/disk0s1s2 //p' | /usr/bin/sed -e 's/^[ \t]*//' | /usr/bin/sed 's/ .*//')"
 GUID="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Partition unique GUID: //p')"
 LastSect="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Last sector: //p' | /usr/bin/sed 's/ .*//')"
