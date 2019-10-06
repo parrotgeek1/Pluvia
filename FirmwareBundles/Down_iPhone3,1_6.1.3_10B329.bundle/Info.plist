@@ -1,67 +1,67 @@
-<?xml version=1.0 encoding=UTF-8?>
-<!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd>
-<plist version=1.0>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
 <dict>
+	<key>DownloadUrl</key>
+	<string></string>
+	<key>Filename</key>
+	<string>iPhone3,1_6.1.3_10B329_Restore.ipsw</string>
 	<key>FilesystemPatches</key>
 	<dict/>
 	<key>FirmwarePatches</key>
 	<dict>
-		<key>RestoreKernelCache</key>
-		<dict>
-			<key>File</key>
-			<string>kernelcache.release.n90</string>
-			<key>IV</key>
-			<string>8f0e033069987ea966ef21cbd57ab385</string>
-			<key>Key</key>
-			<string>62c4d022a02d2c000b51705796d11661610c85f0b09f98ac0322d78a12463227</string>
-			<!--key>Patch</key>
-			<string>kernelcache.release.patch</string-->
-			<key>DecryptPath</key>
-			<string>Downgrade/kernelcache.release.n90</string>
-			<key>TypeFlag</key>
-			<integer>4</integer>
-		</dict>
-		<!--key>Update Ramdisk</key>
-		<dict>
-			<key>File</key>
-			<string>048-2533-005.dmg</string>
-			<key>IV</key>
-			<string>49ab89542e78dce8866bd005af2a2515</string>
-			<key>Key</key>
-			<string>6b5b0b02f3ef2a02fc3b40a185aacdc57a9e2b377aabae42d117387720a8cc4d</string>
-			<key>TypeFlag</key>
-			<integer>8</integer>
-		</dict-->
 		<key>Restore Ramdisk</key>
 		<dict>
+			<key>Decrypt</key>
+			<true/>
 			<key>File</key>
 			<string>048-2441-007.dmg</string>
 			<key>IV</key>
 			<string>69317c3838ea9c0bc0af5989782dedab</string>
 			<key>Key</key>
 			<string>4671e53cf6d38df7082b3171eaa60d32d7097c16574386975496b66549dd65b3</string>
-			<key>Decrypt</key>
-			<true/>
 			<key>TypeFlag</key>
 			<integer>8</integer>
 		</dict>
-		<key>iBSS</key>
+		<key>RestoreDeviceTree</key>
 		<dict>
+			<key>DecryptPath</key>
+			<string>Downgrade/DeviceTree.n90ap.img3</string>
 			<key>File</key>
-			<string>Firmware/dfu/iBSS.n90ap.RELEASE.dfu</string>
+			<string>Firmware/all_flash/all_flash.n90ap.production/DeviceTree.n90ap.img3</string>
 			<key>IV</key>
-			<string>19cb1b58bbf7f392a86b009219978b0a</string>
+			<string>4a44e07427942e3f0769cd2fb748f60e</string>
 			<key>Key</key>
-			<string>ffd8a1e3b07179a92a6ff40fa2859091c1994e56b8bdb86e99fab9191ec92e91</string>
-			<key>Patch</key>
-			<string>iBSS.n90ap.RELEASE.patch</string>
-			<key>Decrypt</key>
-			<true/>
+			<string>19dc906dbea48840bb32c20add34ac2ac3c2e599370b9b0964a13212dd8aa7e4</string>
+		</dict>
+		<key>RestoreKernelCache</key>
+		<dict>
+			<key>DecryptPath</key>
+			<string>Downgrade/kernelcache.release.n90</string>
+			<key>File</key>
+			<string>kernelcache.release.n90</string>
+			<key>IV</key>
+			<string>8f0e033069987ea966ef21cbd57ab385</string>
+			<key>Key</key>
+			<string>62c4d022a02d2c000b51705796d11661610c85f0b09f98ac0322d78a12463227</string>
 			<key>TypeFlag</key>
-			<integer>8</integer>
+			<integer>4</integer>
+		</dict>
+		<key>RestoreLogo</key>
+		<dict>
+			<key>DecryptPath</key>
+			<string>Downgrade/applelogo@2x.s5l8930x.img3</string>
+			<key>File</key>
+			<string>Firmware/all_flash/all_flash.n90ap.production/applelogo@2x.s5l8930x.img3</string>
+			<key>IV</key>
+			<string>02c61d93a817034d49edb0ad1ef4e77e</string>
+			<key>Key</key>
+			<string>ac48545272fa0c0bd806d9e9e9f3d923e650f5d114b1f9aeef4dd2da326e680c</string>
 		</dict>
 		<key>iBEC</key>
 		<dict>
+			<key>Decrypt</key>
+			<true/>
 			<key>File</key>
 			<string>Firmware/dfu/iBEC.n90ap.RELEASE.dfu</string>
 			<key>IV</key>
@@ -70,34 +70,33 @@
 			<string>22c6cb95034618338ce479927132c5dde85f1d7e936ccefb0f1689c1dcce7724</string>
 			<key>Patch</key>
 			<string>iBEC.n90ap.RELEASE.patch</string>
-			<key>Decrypt</key>
-			<true/>
 			<key>TypeFlag</key>
 			<integer>8</integer>
 		</dict>
-		<key>RestoreDeviceTree</key>
+		<key>iBSS</key>
 		<dict>
+			<key>Decrypt</key>
+			<true/>
 			<key>File</key>
-			<string>Firmware/all_flash/all_flash.n90ap.production/DeviceTree.n90ap.img3</string>
+			<string>Firmware/dfu/iBSS.n90ap.RELEASE.dfu</string>
 			<key>IV</key>
-			<string>4a44e07427942e3f0769cd2fb748f60e</string>
+			<string>19cb1b58bbf7f392a86b009219978b0a</string>
 			<key>Key</key>
-			<string>19dc906dbea48840bb32c20add34ac2ac3c2e599370b9b0964a13212dd8aa7e4</string>
-			<key>DecryptPath</key>
-			<string>Downgrade/DeviceTree.n90ap.img3</string>
-		</dict>
-		<key>RestoreLogo</key>
-		<dict>
-			<key>File</key>
-			<string>Firmware/all_flash/all_flash.n90ap.production/applelogo@2x.s5l8930x.img3</string>
-			<key>IV</key>
-			<string>02c61d93a817034d49edb0ad1ef4e77e</string>
-			<key>Key</key>
-			<string>ac48545272fa0c0bd806d9e9e9f3d923e650f5d114b1f9aeef4dd2da326e680c</string>
-			<key>DecryptPath</key>
-			<string>Downgrade/applelogo@2x.s5l8930x.img3</string>
+			<string>ffd8a1e3b07179a92a6ff40fa2859091c1994e56b8bdb86e99fab9191ec92e91</string>
+			<key>Patch</key>
+			<string>iBSS.n90ap.RELEASE.patch</string>
+			<key>TypeFlag</key>
+			<integer>8</integer>
 		</dict>
 	</dict>
+	<key>Name</key>
+	<string>iPhone3,1_6.1.3_10B329</string>
+	<key>Platform</key>
+	<integer>1</integer>
+	<key>RamdiskMountVolume</key>
+	<string>ramdisk</string>
+	<key>RamdiskOptionsPath</key>
+	<string>/usr/local/share/restore/options.n90.plist</string>
 	<key>RamdiskPatches</key>
 	<dict>
 		<key>asr</key>
@@ -107,36 +106,17 @@
 			<key>Patch</key>
 			<string>asr.patch</string>
 		</dict>
-		<!--key>restored_external</key>
-		<dict>
-			<key>File</key>
-			<string>usr/local/bin/restored_external</string>
-			<key>Patch</key>
-			<string>restored.patch</string>
-		</dict-->
 	</dict>
-	<key>RamdiskMountVolume</key>
-	<string>ramdisk</string>
-	<key>RamdiskOptionsPath</key>
-	<string>/usr/local/share/restore/options.n90.plist</string>
 	<key>RootFilesystem</key>
 	<string>048-2748-005.dmg</string>
-	<key>RootFilesystemSize</key>
-	<integer>1212</integer>
 	<key>RootFilesystemKey</key>
 	<string>c676166434b79cbde341e094000dfc47b3161034371b25a9054880a757d73aead553a317</string>
 	<key>RootFilesystemMountVolume</key>
 	<string>BrightonMaps10B329.N90OS</string>
+	<key>RootFilesystemSize</key>
+	<integer>1250</integer>
 	<key>SHA1</key>
 	<string>f8c53328656f2708e1d2bcb793f12ae46dd4eb23</string>
-	<key>Filename</key>
-	<string>iPhone3,1_6.1.3_10B329_Restore.ipsw</string>
-	<key>Name</key>
-	<string>iPhone3,1_6.1.3_10B329</string>
-	<key>DownloadUrl</key>
-	<string></string>
-	<key>Platform</key>
-	<integer>1</integer>
 	<key>SubPlatform</key>
 	<integer>6</integer>
 </dict>
