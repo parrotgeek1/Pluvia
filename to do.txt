@@ -1,1 +1,1 @@
-prevent people from trying to make a 4.3.5 ipsw with normal make_ipsw 
+[this has been removed in preparation for beta 2 which is a complete rewrite]
