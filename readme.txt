@@ -16,8 +16,15 @@ How to use Pluvia
 =================
 1) Creating the patched IPSW
 
+iOS 5/6/7:
+
 Run ./make_ipsw.sh <Input_IPSW> jailbreak (if you want to jailbreak)
 Or run ./make_ipsw.sh <Input_IPSW> (if you don't want to jailbreak)
+
+iOS 4.3
+
+Run ./make_ipsw.sh <5.1.1_9B206_IPSW> <4.3.5_IPSW> jailbreak (if you want to jailbreak)
+Or run ./make_ipsw.sh <5.1.1_9B206_IPSW> <4.3.5_IPSW> (if you don't want to jailbreak)
 
 2) Restoring the firmware
 
