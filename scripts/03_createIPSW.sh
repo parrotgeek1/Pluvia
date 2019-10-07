@@ -12,13 +12,11 @@ chmod 0400 iBEC
 rm -f iBEC
 cd ..
 extras=
-iosver=`cat work/pvers`
-iosvt=`echo $iosver | cut -d. -f1`
-[ $iosvt != 7 ] && extras="fstab.tar"
 extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
-	extras="jailbreak/Cydia.tar fstab.tar"
+	extras="jailbreak/Cydia.tar"
 	extrasbegin="-S 20"
+	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
 		extras="$extras jailbreak/p0sixspwn.tar"
@@ -27,7 +25,6 @@ if [ "x$2" = "xjailbreak" ] ; then
 		extras="$extras jailbreak/unthredeh4il.tar"
 	else
 		extras=
-		[ $iosvt != 7 ] && extras="fstab.tar"
 		extrasbegin=
 		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
 	fi
