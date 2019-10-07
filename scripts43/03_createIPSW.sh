@@ -1,39 +1,22 @@
 #!/bin/bash -e
-if [ "x$2" = "xreset" ] ; then
+if [ "x$3" = "xreset" ] ; then
 echo "Creating NVRAM reset IPSW (this will take several minutes)"
 ./tools/ipsw "$1" work/tmp.ipsw -ramdiskgrow 600 >/dev/null
 cd work
 else
 cd work
-echo "Creating patched IPSW (this will take several minutes)"
-rm -f iBEC.tar
-chmod 0400 iBEC
-../tools/root_tar/mytar cRf iBEC.tar iBEC
-rm -f iBEC
+echo "Creating patched IPSW (this may take up to 10 minutes)"
 cd ..
-extras=
-iosver=`cat work/pvers`
-iosvt=`echo $iosver | cut -d. -f1`
-[ $iosvt != 7 ] && extras="fstab.tar"
+extras=fstab.tar
 extrasbegin=
-if [ "x$2" = "xjailbreak" ] ; then
+if [ "x$3" = "xjailbreak" ] ; then
 	extras="jailbreak/Cydia.tar fstab.tar"
 	extrasbegin="-S 20"
-	if [ $iosver = 6.1.3 ]; then
-		echo Installing iOS $iosver jailbreak
-		extras="$extras jailbreak/p0sixspwn.tar"
-	elif [ $iosver = 5.1.1 ]; then
-		echo Installing iOS $iosver jailbreak
-		extras="$extras jailbreak/unthredeh4il.tar"
-	else
-		extras=
-		[ $iosvt != 7 ] && extras="fstab.tar"
-		extrasbegin=
-		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
-	fi
+	iosver=4.3.5
+	echo Installing iOS $iosver jailbreak
+	extras="$extras jailbreak/unthredeh4il.tar"
 fi
-./tools/ipsw "$1" work/tmp.ipsw $extrasbegin -ramdiskgrow 600 work/iBEC.tar $extras >/dev/null
-rm -f work/iBEC.tar
+./tools/ipsw "$1" work/tmp.ipsw  -ramdiskgrow 2000 >/dev/null
 echo Replacing bootchain components
 cd work/712
 bcfg=`cat ../bcfg`
@@ -53,13 +36,13 @@ echo Patching ramdisk
 ../tools/xpwntool $rramdisk.orig ramdisk.dmg
 MountRamdisk="$(hdiutil mount ramdisk.dmg | awk -F '\t' '{print $3}')"
 mv "$MountRamdisk/sbin/reboot" "$MountRamdisk/sbin/reboot.real"
-rda=ramdisk_add
+rda=ramdisk_add43
 name=Patched
-if [ "x$2" = "xreset" ] ; then
+if [ "x$3" = "xreset" ] ; then
 	rda=ramdisk_add_reset
 	name=ResetNVRAM
 fi
-if [ "x$2" = "xjailbreak" ] ; then
+if [ "x$3" = "xjailbreak" ] ; then
 	name=Patched_JB
 fi
 find ../$rda -type f -not -name '.*' | while read f; do
@@ -67,9 +50,14 @@ find ../$rda -type f -not -name '.*' | while read f; do
 	cat "$f" > "$MountRamdisk/$dest"
 	chmod 0555 "$MountRamdisk/$dest" 
 done
+if [ "x$3" != "xreset" ] ; then
+	cat "iBEC" > "$MountRamdisk/iBEC"
+	chmod 0555 "$MountRamdisk/iBEC" 
+	rm -f iBEC
+fi
 hdiutil detach "$MountRamdisk" >/dev/null
 ../tools/xpwntool ramdisk.dmg $rramdisk -t $rramdisk.orig
-if [ "x$2" = "xreset" ]; then
+if [ "x$3" = "xreset" ]; then
 	echo Cleaning IPSW
 	zip -qq -d tmp.ipsw '*.dmg' 'Firmware/ICE3*'
 	rm -f `cat sysimg`
@@ -80,8 +68,27 @@ fi
 echo Adding patched ramdisk to IPSW
 zip -qq tmp.ipsw $rramdisk
 rm -f $rramdisk $rramdisk.orig
-iname="`echo "$1" | sed "s/\.ipsw$/_$name.ipsw/"`"
+
+if [ "x$3" != "xreset" ]; then
+echo "Making custom 4.3.5 IPSW to get system image"
+rm -f tmp2.ipsw
+cd ..
+./tools/ipsw "$2" work/tmp2.ipsw $extrasbegin $extras >/dev/null
+cd work
+
+echo "Extracting the resulting system image"
+unzip -qq tmp2.ipsw 038-2288-002.dmg
+rm -f `cat sysimg`
+mv 038-2288-002.dmg `cat sysimg`
+
+echo "Replacing the system image in the base IPSW"
+zip -qq tmp.ipsw `cat sysimg`
+
+rm -f tmp2.ipsw `cat sysimg`
+fi
+
+iname="`echo "$1" | sed 's/5.1.1_9B206/4.3.5_8L1/' | sed "s/\.ipsw$/_$name.ipsw/"`"
 rm -rf "$iname"
 mv tmp.ipsw "$iname"
-rm -f bcfg build ptype pvers rramdisk sysimg
+rm -f bcfg build ptype pvers rramdisk sysimg ramdisk.dmg
 echo "Created patched IPSW at: $iname"

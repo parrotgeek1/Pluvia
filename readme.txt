@@ -7,7 +7,7 @@ Beta 1.5 Limitations
 ====================
 Only for Mac!
 Only supports iPhone3,1. 
-Only supports iOS 5.1.1 (9B206), 6.x, and 7.x.
+Only supports iOS 4.3.5, 5.1.1 (9B206), 6.x, and 7.x.
 Can only jailbreak iOS 6.1.3
 
 NOTE: 8GB iPhone 4's that shipped with iOS 6 can only run iOS 6 and newer, NOT iOS 4 or 5. This almost certainly can't be fixed.
