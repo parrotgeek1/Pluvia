@@ -1,6 +1,6 @@
 import binascii, datetime, hashlib, struct, sys, time
 import usb # pyusb: use 'pip install pyusb' to install this module
-import dfu, recovery, image3, image3_24Kpwn, utilities
+import dfu, image3, image3_24Kpwn, utilities
 
 EXEC_MAGIC = 'exec'[::-1]
 AES_BLOCK_SIZE = 16
