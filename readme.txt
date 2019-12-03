@@ -38,7 +38,7 @@ Credits
 @a8q for partitioning script in ramdisk
 @saurik for Cydia.tar
 p0sixspwn (@ih8sn0w, @squiffy, @winocm) for the untether
-libimobiledevice and @tihmstar for idevicerestore
+s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
 @axi0mx for ipwndfu
 @ih8sn0w, @NyanSatan, and @Merculous for iBoot32Patcher
 @tihmstar and @encounter for tsschecker
