@@ -5,7 +5,7 @@
 	<key>DownloadUrl</key>
 	<string></string>
 	<key>Filename</key>
-	<string>iPhone3,1_5.1.1_9B206_Restore.ipsw</string>
+	<string>iPhone3,1_5.1.1_9B208_Restore.ipsw</string>
 	<key>FilesystemPatches</key>
 	<dict/>
 	<key>FirmwarePatches</key>
@@ -90,7 +90,7 @@
 		</dict>
 	</dict>
 	<key>Name</key>
-	<string>iPhone3,1_5.1.1_9B206_Restore</string>
+	<string>iPhone3,1_5.1.1_9B208_Restore</string>
 	<key>Platform</key>
 	<integer>1</integer>
 	<key>RamdiskMountVolume</key>
@@ -112,7 +112,7 @@
 	<key>RootFilesystemKey</key>
 	<string>e897c2d0aaaea8f2752ff6e144c6efc3158a5dad13c6b95ebe8b99885fc6ad0f6b5448f7</string>
 	<key>RootFilesystemMountVolume</key>
-	<string>Hoodoo9B206.N90OS</string>
+	<string>Hoodoo9B208.N90OS</string>
 	<key>RootFilesystemSize</key>
 	<integer>1050</integer>
 	<key>SHA1</key>
