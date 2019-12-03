@@ -69,7 +69,7 @@ _canonicalize_file_path() {
 }
 
 usage() {
-	echo "Usage: $1 <input.ipsw> [jailbreak | reset]"
+	echo "Usage: $1 <iOS_6.1.3.ipsw> [jailbreak | reset]"
 }
 
 if [ "x$1" = "x" ]; then
