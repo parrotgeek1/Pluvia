@@ -34,9 +34,11 @@ rm -f work/iBEC.tar
 echo Replacing bootchain components
 cd work/712
 bcfg=`cat ../bcfg`
-zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/battery*.img3"
-zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/glyph*.img3"
-(zipinfo -1 ../tmp.ipsw | grep '^Firmware/all_flash/.*img3$'; ls -1 Firmware/all_flash/all_flash.${bcfg}.production/*.img3 )| cut -d/ -f4 | sort | uniq > Firmware/all_flash/all_flash.${bcfg}.production/manifest
+if [ "x$2" != "xreset" ] ; then
+	zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/battery*.img3"
+	zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/glyph*.img3"
+fi
+(zipinfo -1 ../tmp.ipsw | grep '^Firmware/all_flash/.*img3$'; ls -1 Firmware/all_flash/	all_flash.${bcfg}.production/*.img3 )| cut -d/ -f4 | sort | uniq > Firmware/all_flash/all_flash.${bcfg}.production/manifest
 zip -qq ../tmp.ipsw Firmware/all_flash/all_flash.${bcfg}.production/*.img3 Firmware/all_flash/all_flash.${bcfg}.production/manifest
 rm -f Firmware/all_flash/all_flash.${bcfg}.production/manifest
 cd ..
@@ -68,7 +70,7 @@ hdiutil detach "$MountRamdisk" >/dev/null
 ../tools/xpwntool ramdisk.dmg $rramdisk -t $rramdisk.orig
 if [ "x$2" = "xreset" ]; then
 	echo Cleaning IPSW
-	zip -qq -d tmp.ipsw '*.dmg' 'Firmware/ICE3*'
+	zip -qq -d tmp.ipsw '*.dmg'
 	rm -f `cat sysimg`
 	touch `cat sysimg`
 	zip -qq tmp.ipsw `cat sysimg`
