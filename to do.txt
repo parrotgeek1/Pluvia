@@ -1,5 +1,3 @@
-Change root FS name
 Use partialzipbrowser for downloading 7.1.2 bootchain, if it actually works. 
-Try to see if using modded ios 7 buildmanifest lets itunes restore. will it work if version is 10B500?
 partialzip for get port files
 cache keys, shsh
