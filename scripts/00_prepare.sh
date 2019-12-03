@@ -26,7 +26,7 @@ if [ "x$ptype" != "xiPhone3,1" ] ; then
 fi
 bndl=../FirmwareBundles/Down_${ptype}_${pvers}_${build}.bundle
 if [ ! -d "$bndl" ]; then
-	echo "iOS ${pvers} ($build) for ${ptype} is not supported...yet"
+	echo "Please use the iPhone3,1 iOS 6.1.3 IPSW as input."
 	rm -f Restore.plist
 	exit 1
 fi
