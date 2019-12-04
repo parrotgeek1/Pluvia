@@ -42,7 +42,7 @@ Credits
 @saurik for Cydia.tar
 UnthreadedJB for the iOS 5 untether
 p0sixspwn (@ih8sn0w, @squiffy, @winocm) for the iOS 6 untether
-s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
+libimobiledevice and @tihmstar for idevicerestore
 @axi0mx for ipwndfu
 @ih8sn0w, @NyanSatan, and @Merculous for iBoot32Patcher
 @tihmstar and @encounter for tsschecker
