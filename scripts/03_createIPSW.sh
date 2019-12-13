@@ -1,7 +1,7 @@
 #!/bin/bash -e
 if [ "x$2" = "xreset" ] ; then
 echo "Creating NVRAM reset IPSW (this will take several minutes)"
-./tools/ipsw "$1" work/tmp.ipsw -ramdiskgrow 600 >/dev/null
+./tools/ipsw "$1" work/tmp.ipsw -ramdiskgrow 1500 >/dev/null
 cd work
 else
 cd work
