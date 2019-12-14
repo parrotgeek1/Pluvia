@@ -1,11 +1,6 @@
 #!/bin/bash
 /sbin/mount_hfs /dev/disk0s1s1 /mnt1 
 /sbin/mount_hfs /dev/disk0s1s2 /mnt2
-/bin/rm -f /mnt1/System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist /mnt1/System/Library/LaunchDaemons/com.apple.softwareupdateservicesd.plist 
-DataSize="$(/bin/df -B1 | /usr/bin/sed -n -e 's/^.*\/dev\/disk0s1s2 //p'| /usr/bin/sed -e 's/^[ \t]*//'|/usr/bin/sed 's/ .*//')"
-GUID="$((/bin/echo -e "i\n2\nq")  | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Partition unique GUID: //p')"
-LastSect="$((/bin/echo -e "i\n2\nq")  |/bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Last sector: //p' | /usr/bin/sed 's/ .*//')"
-Part2LastSect=$(($LastSect-64))
 /bin/rm -f /mnt1/System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist /mnt1/System/Library/LaunchDaemons/com.apple.softwareupdateservicesd.plist /mnt1/System/Library/LaunchDaemons/com.apple.OTACrashCopier.plist /mnt1/System/Library/LaunchDaemons/com.apple.OTATaskingAgent.plist 
 DataSize="$(/bin/df -B1 | /usr/bin/sed -n -e 's/^.*\/dev\/disk0s1s2 //p' | /usr/bin/sed -e 's/^[ \t]*//' | /usr/bin/sed 's/ .*//')"
 GUID="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Partition unique GUID: //p')"
