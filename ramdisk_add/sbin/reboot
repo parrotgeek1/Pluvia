@@ -11,7 +11,9 @@ fi
 DataSize="$(/bin/df -B1 | /usr/bin/sed -n -e 's/^.*\/dev\/disk0s1s2 //p' | /usr/bin/sed -e 's/^[ \t]*//' | /usr/bin/sed 's/ .*//')"
 GUID="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Partition unique GUID: //p')"
 LastSect="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 | /usr/bin/sed -n -e 's/^.*Last sector: //p' | /usr/bin/sed 's/ .*//')"
-Part2LastSect=$(($LastSect-64))
+LogicalSectorSize="$(/bin/echo -e "p\nq" | /bin/gptfdisk /dev/rdisk0s1 2>/dev/null | /usr/bin/sed -n -e 's/^.*Logical sector size: //p' | /usr/bin/sed 's/ .*//')"
+Part2NumSect=$((524288/$LogicalSectorSize))
+Part2LastSect=$(($LastSect-$Part2NumSect))
 NewDataSize=$(($DataSize-524288))
 Data_Attributeflags="$(/bin/echo -e "i\n2\nq" | /bin/gptfdisk /dev/rdisk0s1 2>/dev/null | /usr/bin/sed -n -e 's/^.*flags: //p')"
 if /bin/test "$Data_Attributeflags" = "0001000000000000"; then
