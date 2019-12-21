@@ -136,6 +136,7 @@ else
 fi
 rm -rf "`realpath "$1" | sed 's/\.ipsw$//'`"
 killall iTunes iTunesHelper >/dev/null 2>&1 || true
+killall -STOP AMPDeviceDiscoveryAgent >/dev/null 2>&1 || true
 cd tools/ipwndfu
 ./ipwndfu -p
 cd ../..
@@ -146,6 +147,7 @@ set +e
 ./tools/idevicerestore -y -e -w "`realpath "$1"`"
 ex=$?
 rm -rf "`realpath "$1" | sed 's/\.ipsw$//'`"
+killall -CONT AMPDeviceDiscoveryAgent >/dev/null 2>&1 || true
 if [ $ex != 0 ]; then
 exit $ex
 fi
