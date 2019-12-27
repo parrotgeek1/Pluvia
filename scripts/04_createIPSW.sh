@@ -17,9 +17,8 @@ if [ "x$2" = "xjailbreak" ] ; then
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
-		extras="$extras jailbreak/p0sixspwn.tar"
+		extras="$extras jailbreak/p0sixspwn.tar jailbreak/fstab_rw.tar"
 	else
-		extras=616.tar
 		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
 	fi
 fi
