@@ -144,7 +144,7 @@ echo
 echo 'IMPORTANT: an "FDR" error is normal, ignore it'
 echo
 set +e
-./tools/idevicerestore -y -e -w "`realpath "$1"`"
+./tools/idevicerestore -c -y -e -w "`realpath "$1"`"
 ex=$?
 rm -rf "`realpath "$1" | sed 's/\.ipsw$//'`"
 killall -CONT AMPDeviceDiscoveryAgent >/dev/null 2>&1 || true
