@@ -20,10 +20,10 @@ if [ "x$2" = "xjailbreak" ] ; then
 	iosver=`cat work/pvers`
 	if [ $iosver = 6.1.3 ]; then
 		echo Installing iOS $iosver jailbreak
-		extras="$extras jailbreak/p0sixspwn.tar"
+		extras="$extras jailbreak/p0sixspwn.tar jailbreak/fstab_rw.tar"
 	elif [ $iosver = 5.1.1 ]; then
 		echo Installing iOS $iosver jailbreak
-		extras="$extras jailbreak/unthredeh4il.tar"
+		extras="$extras jailbreak/unthredeh4il.tar jailbreak/fstab_rw.tar"
 	else
 		extras=
 		extrasbegin=
