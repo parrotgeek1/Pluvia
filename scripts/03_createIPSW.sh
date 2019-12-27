@@ -11,6 +11,7 @@ chmod 0400 iBEC
 ../tools/root_tar/mytar cRf iBEC.tar iBEC
 rm -f iBEC
 cd ..
+iosvermaj=`cat work/pvers | cut -d . -f 1`
 extras=
 extrasbegin=
 if [ "x$2" = "xjailbreak" ] ; then
@@ -38,8 +39,15 @@ if [ "x$2" != "xreset" ] ; then
 	zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/battery*.img3"
 	zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/glyph*.img3"
 fi
+if [ $iosvermaj = 7 ] ; then
+zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/applelogo*.img3"
 (zipinfo -1 ../tmp.ipsw | grep '^Firmware/all_flash/.*img3$'; ls -1 Firmware/all_flash/all_flash.${bcfg}.production/*.img3 )| cut -d/ -f4 | sort | uniq > Firmware/all_flash/all_flash.${bcfg}.production/manifest
 zip -qq ../tmp.ipsw Firmware/all_flash/all_flash.${bcfg}.production/*.img3 Firmware/all_flash/all_flash.${bcfg}.production/manifest
+else
+(zipinfo -1 ../tmp.ipsw | grep '^Firmware/all_flash/.*img3$'; ls -1 Firmware/all_flash/all_flash.${bcfg}.production/*.img3 )| cut -d/ -f4 | sort | uniq | grep -v applelogo@2x~iphone.s5l8930x.img3 > Firmware/all_flash/all_flash.${bcfg}.production/manifest
+zip -qq ../tmp.ipsw Firmware/all_flash/all_flash.${bcfg}.production/*.img3 Firmware/all_flash/all_flash.${bcfg}.production/manifest
+zip -d -qq ../tmp.ipsw "Firmware/all_flash/all_flash.${bcfg}.production/applelogo@2x~iphone.s5l8930x.img3"
+fi
 rm -f Firmware/all_flash/all_flash.${bcfg}.production/manifest
 cd ..
 fi
