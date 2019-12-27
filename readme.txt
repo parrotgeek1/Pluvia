@@ -26,8 +26,6 @@ Run ./restore.sh <Patched_IPSW>
 Wait for that to complete.
 When your phone reboots the Apple logo should blink and then it will boot the older iOS!
 
-IMPORTANT: The second time you open Cydia (right after "Preparing Filesystem"), it will crash. I don't know why. Just reboot your iPhone and it will work.
-
 Getting out of recovery mode after restoring to stock iOS
 =========================================================
 Run ./make_ipsw.sh <Any_Supported_Input_IPSW> reset
