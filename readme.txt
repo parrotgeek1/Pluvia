@@ -3,7 +3,7 @@ What is Pluvia?
 Pluvia allows you to untethered downgrade your iPhone 4 without SHSH blobs! 
 It uses the iOS 7.1.2 iBoot exploit "De Rebus Antiquis" by @xerub and @dora2-iOS.
 
-Beta 1.5 Limitations
+Beta 1.6 Limitations
 ====================
 Only for Mac!
 Only supports iPhone3,1. 
