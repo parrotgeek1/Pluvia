@@ -3,11 +3,11 @@ What is Pluvia?
 Pluvia allows you to untethered downgrade your iPhone 4 without SHSH blobs! 
 It uses the iOS 7.1.2 iBoot exploit "De Rebus Antiquis" by @xerub and @dora2-iOS.
 
-Beta 1.5 Limitations
+Beta 1.6 Limitations
 ====================
 Only for Mac!
 Only supports iPhone3,1. 
-Only supports iOS 5.1.1 (9B206), 6.x, and 7.x.
+Only supports iOS 5.1.1, 6.x, and 7.x.
 Can only jailbreak iOS 5.1.1 and 6.1.3
 
 NOTE: 8GB iPhone 4's that shipped with iOS 6 can only run iOS 6 and newer, NOT iOS 4 or 5. This almost certainly can't be fixed.
@@ -35,7 +35,7 @@ Run ./restore.sh <Reset_NVRAM_IPSW>
 Credits
 =======
 @xerub for De Rebus Antiquis iBoot exploit
-@dora2-iOS for the auto-booting version of the exploit (ramdiskH_beta4.dmg), and the firmware bundles (https://github.com/dora2-iOS/s0meiyoshino)
+@dora2-iOS for the auto-booting version of the exploit (ramdiskH_beta4.dmg), and the firmware bundles (https://github.com/dora2-iOS/s0meiyoshino) except for 9B208 which I created
 @a8q for partitioning script in ramdisk
 @saurik for Cydia.tar
 UnthreadedJB for the iOS 5 untether
