@@ -30,7 +30,7 @@ if [ "x$2" = "xjailbreak" ] ; then
 		echo "WARNING: Pluvia can't jailbreak iOS $iosver yet. Skipping."
 	fi
 fi
-./tools/ipsw "$1" work/tmp.ipsw $extrasbegin -ramdiskgrow 600 work/iBEC.tar $extras >/dev/null
+./tools/ipsw "$1" work/tmp.ipsw $extrasbegin -ramdiskgrow 1500 work/iBEC.tar $extras >/dev/null
 rm -f work/iBEC.tar
 echo Replacing bootchain components
 cd work/712
