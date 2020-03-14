@@ -45,3 +45,7 @@ s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
 @ih8sn0w, @NyanSatan, and @Merculous for iBoot32Patcher
 @tihmstar and @encounter for tsschecker
 @sequinn and @parrotgeek1 for root_tar
+
+Licensing note
+==============
+The ParrotGeek Software logo shown during the restore process is NOT licensed under the GPL and must be removed in any forks.
