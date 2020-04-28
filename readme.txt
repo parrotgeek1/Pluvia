@@ -43,3 +43,8 @@ s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
 @tihmstar and @encounter for tsschecker
 The GNU Project for GNU tar (gtar)
 @danzatt for ios-dualboot (hfs_resize)
+
+Licensing note
+==============
+The ParrotGeek Software logo shown during the restore process is NOT licensed under the GPL and must be removed in any forks.
+Furthermore, any publicly released forks of this project must not use the word Pluvia anywhere in their name, or purport to be endorsed by ParrotGeek Software.
