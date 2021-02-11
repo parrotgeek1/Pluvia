@@ -80,7 +80,7 @@ int roundUp(int numToRound, int multiple) {
 
 /*
  • Permissions for extracted files
- – By default, tar does not try to restore a files’s archived permissions.
+ – By default, tar does not try to restore a file's archived permissions.
  – It offers rw permission to everyone, and the umask applies.
  – If any execute bits are set in the archived permissions,
  tar offers execute permission to all on the extracted file.
@@ -153,10 +153,10 @@ void extractTarOrOutput(char *specified[],int onlyOutput) {
             exit(EXIT_FAILURE);
         }
         /*
-         ’0’ Regular file
-         ’\0’ Regular file (alternate)
-         ’2’ symbolic link
-         ’5’ directory
+         '0' Regular file
+         '\0' Regular file (alternate)
+         '2' symbolic link
+         '5' directory
          */
 
         if(f.prefix[0] != 0) {
