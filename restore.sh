@@ -138,7 +138,7 @@ rm -rf "`realpath "$1" | sed 's/\.ipsw$//'`"
 killall iTunes iTunesHelper >/dev/null 2>&1 || true
 killall -STOP AMPDeviceDiscoveryAgent >/dev/null 2>&1 || true
 cd tools/ipwndfu
-./ipwndfu -p
+arch -x86_64 python ./ipwndfu -p
 cd ../..
 echo
 echo 'IMPORTANT: an "FDR" error is normal, ignore it'
