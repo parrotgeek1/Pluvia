@@ -10,12 +10,6 @@ class VersionConfig:
 
 configs = [
     VersionConfig(
-        version='11.',
-        bottle='libusb-1.0.22.mojave.bottle',
-        bottle_sha256='6accd1dfe6e66c30aac825ad674e9c7a48b752bcf84561e9e2d397ce188504ff',
-        dylib_patches=[(0x8fd1, 'E985000000'.decode('hex'))],
-        dylib_sha256='34d4c0ca821a31f83f3860575f9683cdb8fc5cbd4167383eedfb8b2ba7f7d9d5'),
-    VersionConfig(
         version='10.16',
         bottle='libusb-1.0.22.mojave.bottle',
         bottle_sha256='6accd1dfe6e66c30aac825ad674e9c7a48b752bcf84561e9e2d397ce188504ff',
@@ -86,6 +80,9 @@ def libusb1_path_internal():
     if version == '':
         # We're not running on a Mac.
         return None
+    versionmaj = int(version[:2])
+    if versionmaj >= 11:
+        version = '10.16'
 
     for config in configs:
         if version.startswith(config.version):
