@@ -73,7 +73,7 @@ if [ "x`uname`" != "xDarwin" ] ; then
 	exit 1
 fi
 
-if [ "x`uname -m`" != "xx86_64" ] ; then
+if [ "x`uname -m`" = "xi386" ] ; then
 	echo "Only 64-bit Macs are supported."
 	exit 1
 fi
