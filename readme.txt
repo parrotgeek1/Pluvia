@@ -8,7 +8,8 @@ This is a special version for porting iOS 6.1.6 from the iPod touch 4 to the iPh
 Limitations
 ===========
 Only for Mac!
-Only supports iPhone3,1. 
+Only supports iPhone3,1.
+- Support for iPhone3,2 and 3,3 is not easily possible because the iBoot exploit utilized by Pluvia has not been ported to those devices, and there is almost no documentation of how to do so.
 
 How to use Pluvia
 =================
