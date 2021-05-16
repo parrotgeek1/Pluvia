@@ -34,7 +34,7 @@ Run ./restore.sh <Reset_NVRAM_IPSW>
 Credits
 =======
 @xerub for De Rebus Antiquis iBoot exploit
-@dora2-iOS for exploit.dmg, part of the partitioning script in the ramdisk, and the firmware bundles
+@dora2-iOS for ramdiskH.dmg, part of the partitioning script in the ramdisk, and the firmware bundles
 @a8q for the original partitioning script in the ramdisk
 @saurik for Cydia.tar
 p0sixspwn (@ih8sn0w, @squiffy, @winocm) for the untether
