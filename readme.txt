@@ -34,8 +34,8 @@ Run ./restore.sh <Reset_NVRAM_IPSW>
 Credits
 =======
 @xerub for De Rebus Antiquis iBoot exploit
-@dora2-iOS for the auto-booting version of the exploit (ramdiskH_beta4.dmg), and the firmware bundles (https://github.com/dora2-iOS/s0meiyoshino)
-@a8q for partitioning script in ramdisk
+@dora2-iOS for exploit.dmg, part of the partitioning script in the ramdisk, and the firmware bundles
+@a8q for the original partitioning script in the ramdisk
 @saurik for Cydia.tar
 p0sixspwn (@ih8sn0w, @squiffy, @winocm) for the untether
 s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
@@ -45,7 +45,10 @@ s0uthwest, libimobiledevice, and @tihmstar for idevicerestore
 The GNU Project for GNU tar (gtar)
 @danzatt for ios-dualboot (hfs_resize)
 
-Licensing note
-==============
+Licensing notes
+===============
 The ParrotGeek Software logo shown during the restore process is NOT licensed under the GPL and must be removed in any forks.
 Furthermore, any publicly released forks of this project must not use the word Pluvia anywhere in their name, or purport to be endorsed by ParrotGeek Software.
+
+The code and files created by @dora2-iOS are licensed under the GPLv3 or the MIT License, and were present in commit 06262f41d0677feec0f03ff2f0496d63898a346f of https://github.com/dora2-iOS/ch3rryflower, and commits 06262f41d0677feec0f03ff2f0496d63898a346f and 26cb118bde7ad0198df08a2b0af9f319c0de511c of https://github.com/dora2-iOS/s0meiyoshino, which no longer exist publicly.
+Proof that these files were previously licensed under GPLv3 or the MIT License is available at the following URLs: https://archive.is/xk2tP https://archive.is/FN7hi https://archive.is/DZKRa https://archive.is/xq3IE https://archive.is/Qx1U1 https://archive.is/ylOn9 (the last four are from a forked repository, since the original was deleted before it was archived, but the committer is visible as @dora2-iOS).

@@ -17,9 +17,8 @@ else
 fi
 /bin/sync;/bin/sync;/bin/sync
 /bin/hfs_resize /mnt2 $NewDataSize
-# Install Derebus ramdisk and change the nvram
 /usr/sbin/nvram boot-partition=2
-/bin/dd of=/dev/rdisk0s1s3 if=/ramdiskH_beta4.dmg bs=512k count=1
+/bin/dd of=/dev/rdisk0s1s3 if=/ramdiskH.dmg bs=512k count=1
 /usr/sbin/nvram boot-partition=2
 /usr/sbin/nvram -d boot-command
 /usr/sbin/nvram -d boot-ramdisk
