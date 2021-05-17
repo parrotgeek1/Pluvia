@@ -1,7 +1,7 @@
 Important Notice
 ================
 
-Pluvia is now end-of-life. Support for new iOS versions and devices will *not* be added in the feature. The only changes which *might* be made to Pluvia would be those necessary to make it function on newer macOS versions; such compatibility will not be added if it imposes a significant maintenance burden.
+Development of Pluvia is now discontinued. Support for new iOS versions and devices will *not* be added in the feature. The only changes which *might* be made to Pluvia would be those necessary to make it function on newer macOS versions; such compatibility will not be added if it imposes a significant maintenance burden.
 
 What is Pluvia?
 ===============
