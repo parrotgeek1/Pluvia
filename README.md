@@ -1,7 +1,7 @@
 Important Notice
 ================
 
-Development of Pluvia is now discontinued, and no support is available for it.
+Development of Pluvia is now discontinued, and no support is available for it. It is not compatible with macOS 12.3 Monterey or newer versions.
 
 What is Pluvia?
 ===============
